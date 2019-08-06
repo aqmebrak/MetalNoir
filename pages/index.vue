@@ -26,10 +26,12 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Processing from '~/components/Processing.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    Processing
   }
 }
 </script>
