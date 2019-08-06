@@ -1,3 +1,14 @@
+/* nuxt.config.js */
+// ajouter seulement `router.base = '/<nom-du-depot>/'` si `DEPLOY_ENV` est `GH_PAGES`
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/MetalNoir/'
+        }
+      }
+    : {}
+
 export default {
   mode: 'universal',
   /*
@@ -47,5 +58,6 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  }
+  },
+  ...routerBase
 }
