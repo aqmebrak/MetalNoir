@@ -1,5 +1,13 @@
 <template>
-  <div>
+  <div class="container">
+    <div class="title-container">
+      <h1 class="title">
+        Metal Noir
+      </h1>
+      <h2 class="subtitle">
+        Black Metal project
+      </h2>
+    </div>
     <nuxt />
   </div>
 </template>
@@ -24,32 +32,36 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
   background-color: #35495e;
+}
+
+.title-container {
+  flex: 1;
+}
+
+.title {
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: rgb(128, 138, 140);
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #222222;
+  word-spacing: 5px;
+  padding-bottom: 15px;
 }
 </style>
