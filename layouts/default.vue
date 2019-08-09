@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <div class="title-container">
-      <h1 class="title">
-        Metal Noir
-      </h1>
-      <h2 class="subtitle">
-        Black Metal project
-      </h2>
-    </div>
+    <!--    <div class="title-container">-->
+    <!--      <h1 class="title">-->
+    <!--        Metal Noir-->
+    <!--      </h1>-->
+    <!--      <h2 class="subtitle">-->
+    <!--        Black Metal project-->
+    <!--      </h2>-->
+    <!--    </div>-->
     <nuxt />
   </div>
 </template>
