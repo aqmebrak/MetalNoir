@@ -8,23 +8,32 @@ export default {
 }
 if (process.client) {
   const p5 = require('p5')
-  const frames = 5
+  const frames = 60
+
   const sketch = function(p) {
+    // vars
     let myFont = null
-    const lines = []
-    const colorBrightness = []
     let brightUp = true
 
+    // consts
+    const lines = []
+    const colorBrightness = []
+    const moonCoord = {
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2 - 200
+    }
+
+    // init
     for (let i = 0; i < frames; i++) {
       colorBrightness[i] = i * (255 / frames)
     }
 
-    console.log(colorBrightness)
-
+    // preload
     p.preload = function() {
       myFont = p.loadFont('./brutal-tooth.otf')
     }
 
+    // setup
     p.setup = function() {
       p.createCanvas(window.innerWidth, window.innerHeight)
       p.background(0)
@@ -39,24 +48,23 @@ if (process.client) {
       }
     }
 
+    // draw
     p.draw = function() {
       p.background(0)
-      p.fill(255)
-      p.stroke(0)
+      p.noStroke()
+      p.circle(moonCoord.x, moonCoord.y, 150)
+      p.stroke(215, 215, 215)
       p.text('NOIRE', window.innerWidth / 2, 100)
       p.textAlign(p.CENTER, p.TOP)
 
       p.strokeWeight(3)
-
-      if (p.frameCount % frames === 0) {
-        brightUp = !brightUp
-      }
-
       const color = brightUp ? colorBrightness.shift() : colorBrightness.pop()
-      console.log(color)
 
       brightUp ? colorBrightness.push(color) : colorBrightness.unshift(color)
       p.stroke(color)
+      if (p.frameCount % frames === 0) {
+        brightUp = !brightUp
+      }
 
       p.beginShape(p.LINES)
       for (let i = 0; i <= lines.length - 1; i++) {
